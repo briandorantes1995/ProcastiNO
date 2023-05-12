@@ -10,12 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:background="#C1C8F1">
 
         <Button
             android:id="@+id/IniciasSesionPantalla"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
+            android:layout_width="254dp"
+            android:layout_height="41dp"
             android:layout_weight="1"
             android:background="@color/purple_500"
             android:onClick="irIniciar"
@@ -24,14 +24,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints"
             tools:text="@string/btn_iniciar_Pantalla"
             tools:visibility="visible" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="428dp"
-            android:layout_height="48dp"
+            android:layout_width="207dp"
+            android:layout_height="39dp"
             android:background="@color/purple_200"
             android:onClick="Lenguaje"
             android:text="@string/btn_Lenguaje"
@@ -39,29 +40,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/btn_RegistrarPantalla"
-            android:layout_width="0dp"
-            android:layout_height="49dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500"
-            android:onClick="irRegistrar"
-            android:text="@string/btn_Registrar_pantalla"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            tools:text="@string/btn_Registrar_pantalla" />
-
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="408dp"
-            android:layout_height="31dp"
+            android:layout_width="283dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="128dp"
             android:text="@string/textView4"
             android:textSize="16sp"
             app:autoSizeTextType="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.591" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

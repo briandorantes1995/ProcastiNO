@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.dispositivosmoviles">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DISPOSITIVOSMOVILES"
         tools:targetApi="31">
+        <activity
+            android:name=".Todo"
+            android:exported="false"
+            android:label="@string/title_activity_todo"
+            android:theme="@style/Theme.DISPOSITIVOSMOVILES" />
         <activity
             android:name=".Videollamada"
             android:exported="false" />
