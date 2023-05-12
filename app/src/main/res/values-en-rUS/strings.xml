@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobile Devices</string>
+    <string name="btn_iniciar_Pantalla" translatable="false">Log In</string>
+    <string name="btn_Registrar_pantalla" translatable="false">Sing In</string>
+    <string name="btn_Iniciar_Sesion">Login </string>
+    <string name="btn_Registrarse">Sing In</string>
+    <string name="btn_CerrarSesion">Log out</string>
+    <string name="btn_IniciarAdmin">ADMIN</string>
+    <string name="btn_IniciarAdmin2">Log In</string>
+    <string name="btn_CerrarSesionADMIN">Log Out</string>
+    <string name="Chat">Chat</string>
+    <string name="Name">Name</string>
+    <string name="Message">Message</string>
+    <string name="btn_Entrar">Join</string>
+    <string name="Descripcion">Description</string>
+    <string name="Tarea">Assigment</string>
+    <string name="btn_Video">VideoCall</string>
+    <string name="btn_ADMINENTRAR">Log In</string>
+    <string name="btn_Lenguaje">Changue Lenguaje</string>
+    <string name="Departamento">Selecciona Un departamento</string>
+    <string name="textView4">If You dont have Account, You can sing in here!</string>
+    <string name="Contraseña">Password</string>
+    <string name="ContraseñaConfirmacion">Confirm Your Password</string>
+    <string name="Contrasena">Password</string>
+    <string name="Correo">Adress</string>
+    <string name="textView3">ADMIN</string>
+    <string name="textView10">USER</string>
+    <string name="button4">VideoCall</string>
+</resources>

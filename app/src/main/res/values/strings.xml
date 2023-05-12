@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name" translatable="false">DISPOSITIVOS MOVILES</string>
+    <string name="btn_iniciar_Pantalla" translatable="false">Iniciar Sesion</string>
+    <string name="btn_Registrar_pantalla" translatable="false">Registrarse</string>
+    <string name="btn_Iniciar_Sesion" translatable="false">Iniciar Sesion</string>
+    <string name="btn_Registrarse" translatable="false">Registrarse</string>
+    <string name="btn_CerrarSesion" translatable="false">Cerrar Sesion</string>
+    <string name="btn_IniciarAdmin" translatable="false">ADMIN</string>
+    <string name="btn_IniciarAdmin2" translatable="false">Iniciar Sesion</string>
+    <string name="btn_CerrarSesionADMIN" translatable="false">Cerrar Sesion</string>
+    <string name="Chat" translatable="false">Chat</string>
+    <string name="Name" translatable="false">Nombre</string>
+    <string name="Message" translatable="false">Mensaje</string>
+    <string name="btn_Entrar" translatable="false">Unirse</string>
+    <string name="textView4" translatable="false">No tienes cuenta? Registrate Aqui!></string>
+    <string name="Descripcion" translatable="false">Descripcion</string>
+    <string name="Tarea" translatable="false">Tarea</string>
+    <string name="btn_Video" translatable="false">Videollamada</string>
+    <string name="btn_ADMINENTRAR" translatable="false">Iniciar Sesion</string>
+    <string name="btn_Lenguaje" translatable="false">Cambiar Lenguaje</string>
+    <string name="Departamento" translatable="false">Selecciona Un departamento</string>
+    <string name="Contraseña" translatable="false">Contraseña</string>
+    <string name="ContraseñaConfirmacion" translatable="false">Confirma tu Contraseña</string>
+    <string name="Correo" translatable="false">Correo</string>
+    <string name="Contrasena" translatable="false">Contraseña</string>
+    <string name="textView3" translatable="false">ADMINISTRADOR</string>
+    <string name="textView10" translatable="false">USUARIO</string>
+    <string name="button4" translatable="false">Videollamada</string>
+
+
+
+    <string name="str_en" translatable="false">English</string>
+    <string name="str_es" translatable="false">Spanish</string>
+    <string name="str_pt" translatable="false">Portuguese</string>
+
+    <string-array name="languages">
+        <item>@string/str_en</item>
+        <item>@string/str_es</item>
+        <item>@string/str_pt</item>
+    </string-array>
+</resources>

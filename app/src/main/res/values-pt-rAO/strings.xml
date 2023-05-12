@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DISPOSITIVOS MÓVEIS</string>
+    <string name="btn_iniciar_Pantalla">" Conecte-se"</string>
+    <string name="btn_Registrar_pantalla">" Entrar"</string>
+    <string name="btn_Iniciar_Sesion">" Conecte-se"</string>
+    <string name="btn_Registrarse">" Entrar"</string>
+    <string name="btn_CerrarSesion">Sair</string>
+    <string name="btn_CerrarSesionADMIN">Sair</string>
+    <string name="Chat">Chate</string>
+    <string name="Name">Nom</string>
+    <string name="Message">Mesage</string>
+    <string name="btn_Lenguaje">Mudar idioma</string>
+    <string name="btn_IniciarAdmin">ADMIN</string>
+    <string name="btn_IniciarAdmin2">Entrar</string>
+    <string name="btn_Entrar">Entrar</string>
+    <string name="Descripcion">Descripsiao</string>
+    <string name="Tarea">Taru</string>
+    <string name="btn_Video">Videoshamade</string>
+    <string name="btn_ADMINENTRAR">Entrar</string>
+    <string name="str_en">Inglês</string>
+    <string name="str_es">Espanhol</string>
+    <string name="Departamento">Selecciona Un departamento</string>
+    <string name="str_pt">Portuguesse</string>
+    <string name="textView4">Vocênão tem uma conta? Assine aqui!</string>
+    <string name="Contraseña">Senha</string>
+    <string name="ContraseñaConfirmacion">Confirme sua senha</string>
+    <string name="Contrasena">Senha</string>
+    <string name="Correo">correspondência</string>
+    <string name="textView3">ADMINISTRADOR</string>
+    <string name="textView10">DO UTILIZADOR</string>
+    <string name="button4">Chamada De Video</string>
+
+
+</resources>
