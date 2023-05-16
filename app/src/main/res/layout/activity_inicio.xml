@@ -22,6 +22,7 @@
             android:text="@string/btn_iniciar_Pantalla"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
@@ -31,8 +32,8 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="207dp"
-            android:layout_height="39dp"
+            android:layout_width="192dp"
+            android:layout_height="36dp"
             android:background="@color/purple_200"
             android:onClick="Lenguaje"
             android:text="@string/btn_Lenguaje"
@@ -44,13 +45,42 @@
             android:id="@+id/textView4"
             android:layout_width="283dp"
             android:layout_height="24dp"
-            android:layout_marginEnd="128dp"
+            android:layout_marginEnd="48dp"
+            android:onClick="irRegistrar"
             android:text="@string/textView4"
             android:textSize="16sp"
             app:autoSizeTextType="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.591" />
+            app:layout_constraintVertical_bias="0.796" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="350dp"
+            android:layout_height="285dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/procastino" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="319dp"
+            android:layout_height="224dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/IniciasSesionPantalla"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:srcCompat="@drawable/todolist" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

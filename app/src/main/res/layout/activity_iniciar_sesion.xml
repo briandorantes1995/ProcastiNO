@@ -4,112 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IniciarSesionActivity">
+    android:background="#C1C8F1"
+    tools:context=".IniciarSesionActivity"><![CDATA[
 
 
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        ]]>
+
         <EditText
             android:id="@+id/Contrasena1"
             android:layout_width="364dp"
             android:layout_height="52dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:ems="10"
             android:hint="@string/Contrasena"
             android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.659"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+            app:layout_constraintTop_toBottomOf="@+id/Correo" />
 
         <EditText
             android:id="@+id/Correo"
             android:layout_width="370dp"
             android:layout_height="62dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="19dp"
             android:ems="10"
             android:hint="@string/Correo"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/Contrasena1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.471"
+            app:layout_constraintHorizontal_bias="0.756"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="216dp"
             android:layout_height="62dp"
-            android:background="#00FFFFFF"
-            android:backgroundTint="#00FFFFFF"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="125dp"
+            android:background="@color/purple_200"
+            android:backgroundTint="@color/purple_200"
             android:onClick="Iniciarsesion"
             android:text="@string/btn_Iniciar_Sesion"
+            app:layout_constraintBottom_toTopOf="@+id/Tranzaxd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="469dp"
-            android:layout_height="126dp"
-            android:layout_marginTop="52dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Contrasena1"></LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="479dp"
-            android:layout_height="57dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/Correo"
-            tools:layout_editor_absoluteX="-2dp"></LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="529dp"
-            android:layout_height="954dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/rectangle_1" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/Contrasena1"
-            app:srcCompat="@drawable/rectangle_2" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9"
-            app:srcCompat="@drawable/rectangle_2" />
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="161dp"
-            android:layout_height="149dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/user_square" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:srcCompat="@drawable/rectangle_4" />
+            app:layout_constraintTop_toBottomOf="@+id/Contrasena1" />
 
         <Button
             android:id="@+id/Tranzaxd"
@@ -122,5 +73,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="278dp"
+            android:layout_height="252dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="67dp"
+            android:layout_marginBottom="11dp"
+            app:layout_constraintBottom_toTopOf="@+id/Correo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/todolist" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
