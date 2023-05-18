@@ -1,13 +1,17 @@
 package com.example.dispositivosmoviles;
 
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class LogeadoUser extends AppCompatActivity {
@@ -24,6 +31,9 @@ public class LogeadoUser extends AppCompatActivity {
     private TextView textview;
     private Locale locale;
     private Configuration config = new Configuration();
+    private ArrayList<String> items;
+    private ArrayAdapter<String> itemsAdapter;
+    private ListView lvItems;
     TextView tvInfoUser;
 
     @Override
@@ -32,30 +42,52 @@ public class LogeadoUser extends AppCompatActivity {
         setContentView(R.layout.activity_logeado_user);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-
         tvInfoUser = findViewById(R.id.tv_info_user);
-
         initviews(user);
-
-
-
-
-
+        // Lista de Tareas
+        lvItems = (ListView) findViewById(R.id.lvItems);
+        items = new ArrayList<String>();
+        itemsAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, items);
+        lvItems.setAdapter(itemsAdapter);
+        items.add("First Item");
+        items.add("Second Item");
+        setupListViewListener();
     }
+
+
+
+    //Borra Tarea si se deja Presionado
+    private void setupListViewListener() {
+        lvItems.setOnItemLongClickListener(
+                new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> adapter,
+                                                   View item, int pos, long id) {
+                        // Remove the item within array at position
+                        items.remove(pos);
+                        // Refresh the adapter
+                        itemsAdapter.notifyDataSetChanged();
+                        // Return true consumes the long click event (marks it handled)
+                        return true;
+                    }
+
+                });
+    }
+
+
+ //Revisa Si existe el usuario y muestra el correo
     private void initviews(FirebaseUser user) {
-
-
         if (user!= null) {
             tvInfoUser.setText(user.getEmail());
         }
         else{
             tvInfoUser.setText("--");
         }
-
     }
 
 
-
+// cerrar cesion de usuario
     public void clickCerrarSesion2(View view) {
         mAuth.signOut();
         Intent i=new Intent(getApplicationContext(), MainActivity.class);
@@ -65,10 +97,22 @@ public class LogeadoUser extends AppCompatActivity {
 
     }
 
+//Agregar tarea a la lista
+    public void onAddItem(View v) {
+        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
+        String itemText = etNewItem.getText().toString();
+        itemsAdapter.add(itemText);
+        etNewItem.setText("");
+    }
 
 
 
 
 
 
-}
+
+
+
+
+
+}//Fin Activity
