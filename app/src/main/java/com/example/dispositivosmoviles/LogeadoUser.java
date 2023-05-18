@@ -5,7 +5,7 @@ package com.example.dispositivosmoviles;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.FileUtils;
+import org.apache.commons.io.FileUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -47,11 +47,10 @@ public class LogeadoUser extends AppCompatActivity {
         // Lista de Tareas
         lvItems = (ListView) findViewById(R.id.lvItems);
         items = new ArrayList<String>();
+        readItems();
         itemsAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
-        items.add("First Item");
-        items.add("Second Item");
         setupListViewListener();
     }
 
@@ -69,6 +68,7 @@ public class LogeadoUser extends AppCompatActivity {
                         // Refresh the adapter
                         itemsAdapter.notifyDataSetChanged();
                         // Return true consumes the long click event (marks it handled)
+                        writeItems();
                         return true;
                     }
 
@@ -103,10 +103,30 @@ public class LogeadoUser extends AppCompatActivity {
         String itemText = etNewItem.getText().toString();
         itemsAdapter.add(itemText);
         etNewItem.setText("");
+        writeItems();
     }
 
 
+    private void readItems() {
+        File filesDir = getFilesDir();
+        File todoFile = new File(filesDir, "todo.txt");
+        try {
+            items = new ArrayList<String>(FileUtils.readLines(todoFile));
+        } catch (IOException e) {
+            items = new ArrayList<String>();
+        }
+    }
 
+
+    private void writeItems() {
+        File filesDir = getFilesDir();
+        File todoFile = new File(filesDir, "todo.txt");
+        try {
+            FileUtils.writeLines(todoFile, items);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
