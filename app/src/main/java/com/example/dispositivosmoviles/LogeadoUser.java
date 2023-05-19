@@ -3,6 +3,7 @@ package com.example.dispositivosmoviles;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import org.apache.commons.io.FileUtils;
@@ -58,6 +59,7 @@ public class LogeadoUser extends AppCompatActivity {
 
     //Borra Tarea si se deja Presionado
     private void setupListViewListener() {
+        receiveItems();
         lvItems.setOnItemLongClickListener(
                 new AdapterView.OnItemLongClickListener() {
                     @Override
@@ -97,15 +99,6 @@ public class LogeadoUser extends AppCompatActivity {
 
     }
 
-//Agregar tarea a la lista
-    public void onAddItem(View v) {
-        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
-        String itemText = etNewItem.getText().toString();
-        itemsAdapter.add(itemText);
-        etNewItem.setText("");
-        writeItems();
-    }
-
 
     private void readItems() {
         File filesDir = getFilesDir();
@@ -126,6 +119,14 @@ public class LogeadoUser extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    private void receiveItems(){
+        SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
+        String value = sharedPreferences.getString("value","");
+        itemsAdapter.add(value);
+        writeItems();
     }
 
 
