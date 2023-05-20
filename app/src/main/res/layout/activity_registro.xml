@@ -28,6 +28,14 @@
             app:layout_constraintVertical_bias="0.931">
 
             <EditText
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Juan"
+                android:inputType="textPersonName" />
+
+            <EditText
                 android:id="@+id/Correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -74,8 +82,8 @@
 
         <ImageView
             android:id="@+id/imageView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="201dp"
+            android:layout_height="198dp"
             android:layout_marginStart="67dp"
             android:layout_marginTop="148dp"
             android:layout_marginEnd="67dp"

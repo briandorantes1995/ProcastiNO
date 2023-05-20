@@ -37,6 +37,7 @@ public class Chat extends AppCompatActivity {
         etMensaje = findViewById(R.id.etMensaje);
         btnSend = findViewById(R.id.btnSend);
 
+
         lstMensajes = new ArrayList<>();
         mAdapterRVMensajes = new AdapterRVMensajes(lstMensajes);
         rvMensajes.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

@@ -6,29 +6,33 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
-import com.google.android.gms.auth.api.identity.SignInClient;
-import com.google.android.gms.auth.api.identity.SignInCredential;
+
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import timber.log.Timber;
 
 public class REGISTRO extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
+    private EditText nombre;
     private EditText correo;
     private EditText contrasena;
     private EditText contrasenaconfirmacion;
@@ -40,9 +44,11 @@ public class REGISTRO extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         mAuth = FirebaseAuth.getInstance();
+        nombre = findViewById(R.id.nombre);
         correo = findViewById(R.id.Correo);
         contrasena = findViewById(R.id.Contrasena);
         contrasenaconfirmacion = findViewById(R.id.ContrasenaConfirmacion);
+        // Inicializa base de datos para guardas info del usuario
     }
     @Override
     public void onStart() {
@@ -53,8 +59,6 @@ public class REGISTRO extends AppCompatActivity {
     //IF CONTRASENAS COINCIDEN
     public void registrarUsuario(View view){
         if (contrasena.getText().toString().equals(contrasenaconfirmacion.getText().toString())) {
-
-
             mAuth.createUserWithEmailAndPassword(correo.getText().toString(), contrasena.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -66,10 +70,32 @@ public class REGISTRO extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 //Se devuelve a la pantalla principal
                                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                                //Envia correo de verificacion
+                                //Envia Mail de autenticacion
                                 user.sendEmailVerification();
-                                //Mensaje de correo enviado
                                 Toast.makeText(getApplicationContext(), "E-mail de Verificacion enviado", Toast.LENGTH_SHORT).show();
+
+                                //Agrega datos a base de datos
+
+                                Map<String, Object> data = new HashMap<>();
+                                data.put("nombre", nombre.getText().toString());
+                                data.put("correo", correo.getText().toString());
+                                data.put("admin", false);
+
+                                FirebaseFirestore.getInstance().collection("Users")
+                                        .add(data)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                Timber.tag(TAG).d("DocumentSnapshot written with ID: %s", documentReference.getId());
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Timber.tag(TAG).w(e, "Error adding document");
+                                            }
+                                        });//fin de agregar database
+
                                 startActivity(i);
 
 
@@ -84,7 +110,12 @@ public class REGISTRO extends AppCompatActivity {
         }else{
             Toast.makeText(this,"Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
         }
-    } }
+    }
+
+
+
+
+}//fin activity
 
 
 
