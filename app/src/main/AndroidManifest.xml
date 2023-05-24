@@ -22,9 +22,6 @@
             android:name=".Chat"
             android:exported="false" />
         <activity
-            android:name=".IniciarSesion2"
-            android:exported="false" />
-        <activity
             android:name=".LogeadoUser"
             android:exported="false" />
         <activity
