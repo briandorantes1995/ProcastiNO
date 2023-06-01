@@ -7,6 +7,25 @@
     android:background="#C1C8F1"
     tools:context=".Logeado">
 
+    <EditText
+        android:id="@+id/userID"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignTop="@id/btnAddItem2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="84dp"
+        android:layout_toStartOf="@id/btnAddItem2"
+        android:layout_toLeftOf="@id/btnAddItem2"
+        android:hint="Correo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddItem2"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvItems" />
+
     <Button
         android:id="@+id/btnAddItem2"
         android:layout_width="wrap_content"
@@ -14,9 +33,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="84dp"
+        android:onClick="asignartarea"
         android:text="Agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,61 +45,23 @@
 
     <EditText
         android:id="@+id/etNewItem2"
-        android:layout_width="171dp"
-        android:layout_height="40dp"
-        android:layout_alignTop="@+id/btnAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignTop="@id/btnAddItem2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="33dp"
-        android:layout_marginBottom="28dp"
-        android:layout_toStartOf="@+id/btnAddItem"
-        android:layout_toLeftOf="@+id/btnAddItem"
+        android:layout_marginEnd="194dp"
+        android:layout_marginBottom="132dp"
+        android:layout_toStartOf="@id/btnAddItem2"
+        android:layout_toLeftOf="@id/btnAddItem2"
         android:hint="Tarea"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvItems" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="216dp"
-        android:text="@string/textView3"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_info_user"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@android:color/holo_green_light"
-        android:onClick="chat"
-        android:text="@string/Chat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CerrarSesion2"
-        tools:text="@string/Chat" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_green_light"
-        android:onClick="Videollamada"
-        android:text="@string/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <TextView
         android:id="@+id/tv_info_user"
@@ -87,42 +69,106 @@
         android:layout_height="32dp"
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="13dp"
         android:layout_marginEnd="24dp"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_CerrarSesion2"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/btn_CerrarSesion2"
-        android:layout_width="match_parent"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="Videollamada"
+        android:text="Videollamada"
+        app:layout_constraintBottom_toTopOf="@+id/users"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_user" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/purple_200"
+        android:layout_marginStart="138dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="4dp"
         android:onClick="clickCerrarSesion2"
-        android:text="@string/btn_CerrarSesionADMIN"
+        android:text="Cerrar Sesion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="161dp"
+        android:text="Administrador"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="217dp"
-        android:layout_height="126dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginEnd="58dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_info_user"
+        android:layout_width="169dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginEnd="121dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/todolist" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="chat"
+        android:text="Chat"
+        app:layout_constraintBottom_toTopOf="@+id/users"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_user" />
+
+    <ListView
+        android:id="@+id/users"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddItem2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="14dp"
+        android:text="Usuarios"
+        app:layout_constraintBottom_toTopOf="@+id/users"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_user" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

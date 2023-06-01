@@ -23,6 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -80,6 +82,9 @@ public class REGISTRO extends AppCompatActivity {
                                 data.put("nombre", nombre.getText().toString());
                                 data.put("correo", correo.getText().toString());
                                 data.put("admin", false);
+                                data.put("actividades", Arrays.asList(""));
+
+
 
                                 FirebaseFirestore.getInstance().collection("Users")
                                         .add(data)
