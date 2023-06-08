@@ -7,6 +7,34 @@
     android:background="#C1C8F1"
     tools:context=".LogeadoUser">
 
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="Videollamada"
+        android:text="Videollamada"
+        app:layout_constraintBottom_toTopOf="@+id/users"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_user" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="chat"
+        android:text="Chat"
+        app:layout_constraintBottom_toTopOf="@+id/users"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_user" />
+
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
@@ -24,12 +52,13 @@
 
     <TextView
         android:id="@+id/tv_info_user"
-        android:layout_width="0dp"
-        android:layout_height="32dp"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:textSize="12sp"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_CerrarSesion2"
         app:layout_constraintEnd_toEndOf="@id/btn_CerrarSesion2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,18 +85,19 @@
 
     <ListView
         android:id="@+id/lvItems"
-        android:layout_width="383dp"
-        android:layout_height="460dp"
+        android:layout_width="336dp"
+        android:layout_height="356dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="40dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_CerrarSesion2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.282" />
 
     <EditText
         android:id="@+id/editTextText"

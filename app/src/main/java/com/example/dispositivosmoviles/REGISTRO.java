@@ -82,7 +82,7 @@ public class REGISTRO extends AppCompatActivity {
                                 data.put("nombre", nombre.getText().toString());
                                 data.put("correo", correo.getText().toString());
                                 data.put("admin", false);
-                                data.put("actividades", Arrays.asList(""));
+                                data.put("actividades", Arrays.asList("comer sanamente","Hacer ejercicio Diariamente","cumplir con la tarea"));
 
 
 
